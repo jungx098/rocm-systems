@@ -31,7 +31,7 @@ constexpr std::array<hipGLDeviceList, 3> kDeviceLists{
     hipGLDeviceListAll, hipGLDeviceListCurrentFrame, hipGLDeviceListNextFrame};
 }  // anonymous namespace
 
-TEST_CASE("Unit_hipGLGetDevices_Positive_Basic") {
+TEST_CASE("Unit_hipGLGetDevices_Positive_Basic", "[hip][gl_interop]") {
   GLContextScopeGuard gl_context;
 
   const auto device_list = GENERATE(from_range(begin(kDeviceLists), end(kDeviceLists)));
